@@ -76,7 +76,6 @@ export function Footer() {
             reserved.
           </p>
           <p>
-            Built with{" "}
             <Link
               href="https://nextjs.org"
               target="_blank"
@@ -85,6 +84,7 @@ export function Footer() {
             >
               Next.js
             </Link>
+            로 제작
           </p>
         </div>
       </div>

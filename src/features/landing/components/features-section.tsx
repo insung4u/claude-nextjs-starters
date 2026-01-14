@@ -20,10 +20,10 @@ export function FeaturesSection() {
     >
       <div className="mb-12 text-center">
         <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-          Everything you need to get started
+          시작하는 데 필요한 모든 것
         </h2>
         <p className="text-lg text-muted-foreground">
-          A comprehensive starter kit with all the features you need
+          필요한 모든 기능이 포함된 포괄적인 스타터 킷
         </p>
       </div>
 

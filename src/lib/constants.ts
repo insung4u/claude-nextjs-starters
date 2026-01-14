@@ -4,8 +4,8 @@ import type { SiteConfig, NavigationItem, FooterLinkGroup } from "@/types";
  * 사이트 전역 설정
  */
 export const SITE_CONFIG: SiteConfig = {
-  name: "Your Landing Page",
-  description: "Build beautiful landing pages with Next.js, TypeScript, and Tailwind CSS",
+  name: "NextJS Starter",
+  description: "Next.js, TypeScript, Tailwind CSS로 아름다운 랜딩 페이지를 만드세요",
   url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   ogImage: "/og-image.png",
   links: {
@@ -20,15 +20,15 @@ export const SITE_CONFIG: SiteConfig = {
  */
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   {
-    title: "Features",
+    title: "특징",
     href: "#features",
   },
   {
-    title: "About",
+    title: "소개",
     href: "#about",
   },
   {
-    title: "Contact",
+    title: "문의",
     href: "#contact",
   },
 ];
@@ -38,26 +38,26 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
  */
 export const FOOTER_LINKS: FooterLinkGroup[] = [
   {
-    title: "Product",
+    title: "제품",
     links: [
-      { title: "Features", href: "#features" },
-      { title: "Pricing", href: "#pricing" },
-      { title: "Documentation", href: "/docs" },
+      { title: "특징", href: "#features" },
+      { title: "가격", href: "#pricing" },
+      { title: "문서", href: "/docs" },
     ],
   },
   {
-    title: "Company",
+    title: "회사",
     links: [
-      { title: "About", href: "#about" },
-      { title: "Blog", href: "/blog" },
-      { title: "Contact", href: "#contact" },
+      { title: "소개", href: "#about" },
+      { title: "블로그", href: "/blog" },
+      { title: "문의", href: "#contact" },
     ],
   },
   {
-    title: "Legal",
+    title: "법적 정보",
     links: [
-      { title: "Privacy Policy", href: "/privacy" },
-      { title: "Terms of Service", href: "/terms" },
+      { title: "개인정보 처리방침", href: "/privacy" },
+      { title: "서비스 이용약관", href: "/terms" },
     ],
   },
 ];

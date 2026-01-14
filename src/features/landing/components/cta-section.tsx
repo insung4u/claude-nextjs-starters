@@ -16,7 +16,7 @@ export function CTASection() {
     e.preventDefault();
     // TODO: 실제 이메일 구독 로직 구현
     console.log("Email submitted:", email);
-    alert(`Thank you for subscribing! Email: ${email}`);
+    alert(`구독해 주셔서 감사합니다! 이메일: ${email}`);
     setEmail("");
   };
 
@@ -27,21 +27,21 @@ export function CTASection() {
     >
       <div className="mx-auto max-w-2xl rounded-lg border bg-muted/50 p-8 text-center md:p-12">
         <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-          Ready to get started?
+          시작할 준비가 되셨나요?
         </h2>
         <p className="mb-8 text-lg text-muted-foreground">
-          Subscribe to our newsletter to get the latest updates and news.
+          최신 업데이트와 소식을 받아보려면 뉴스레터를 구독하세요.
         </p>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:flex-row">
           <div className="flex-1 text-left">
             <Label htmlFor="email" className="sr-only">
-              Email address
+              이메일 주소
             </Label>
             <Input
               id="email"
               type="email"
-              placeholder="Enter your email"
+              placeholder="이메일을 입력하세요"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -49,12 +49,12 @@ export function CTASection() {
             />
           </div>
           <Button type="submit" size="lg">
-            Subscribe
+            구독하기
           </Button>
         </form>
 
         <p className="mt-4 text-sm text-muted-foreground">
-          We respect your privacy. Unsubscribe at any time.
+          개인정보를 존중합니다. 언제든지 구독을 취소할 수 있습니다.
         </p>
       </div>
     </section>

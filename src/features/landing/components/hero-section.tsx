@@ -13,25 +13,25 @@ export function HeroSection() {
       <div className="mx-auto max-w-4xl text-center">
         {/* Badge */}
         <Badge variant="secondary" className="mb-4">
-          🎉 Built with Next.js 16
+          🎉 Next.js 16으로 제작
         </Badge>
 
         {/* Main Heading */}
         <h1 className="mb-6 text-5xl font-bold tracking-tight md:text-7xl">
-          Build Beautiful Landing Pages
+          아름다운 랜딩 페이지를 만드세요
         </h1>
 
         {/* Subtitle */}
         <p className="mb-8 text-lg text-muted-foreground md:text-xl">
-          A modern Next.js starter kit with TypeScript, Tailwind CSS, and
-          shadcn/ui. Get started in minutes and focus on building your product.
+          TypeScript, Tailwind CSS, shadcn/ui가 적용된 최신 Next.js 스타터 킷입니다.
+          몇 분 안에 시작하고 제품 개발에 집중하세요.
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button size="lg" asChild>
             <Link href="#features">
-              Get Started
+              시작하기
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
@@ -41,7 +41,7 @@ export function HeroSection() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              View on GitHub
+              GitHub에서 보기
             </Link>
           </Button>
         </div>
