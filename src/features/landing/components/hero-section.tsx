@@ -18,13 +18,13 @@ export function HeroSection() {
 
         {/* Main Heading */}
         <h1 className="mb-6 text-5xl font-bold tracking-tight md:text-7xl">
-          아름다운 랜딩 페이지를 만드세요
+          모던 웹 개발을 위한 완벽한 스타터킷
         </h1>
 
         {/* Subtitle */}
         <p className="mb-8 text-lg text-muted-foreground md:text-xl">
-          TypeScript, Tailwind CSS, shadcn/ui가 적용된 최신 Next.js 스타터 킷입니다.
-          몇 분 안에 시작하고 제품 개발에 집중하세요.
+          Next.js 16 + TypeScript + Tailwind CSS + shadcn/ui로 구성된 최신 스타터 킷입니다.
+          검증된 컴포넌트와 구조로 빠르게 시작하세요.
         </p>
 
         {/* CTA Buttons */}
@@ -37,7 +37,7 @@ export function HeroSection() {
           </Button>
           <Button size="lg" variant="outline" asChild>
             <Link
-              href="https://github.com"
+              href="https://github.com/insung4u/claude-nextjs-starters"
               target="_blank"
               rel="noopener noreferrer"
             >

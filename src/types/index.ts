@@ -19,11 +19,6 @@ export interface SiteConfig {
   description: string;
   url: string;
   ogImage: string;
-  links: {
-    twitter?: string;
-    github?: string;
-    linkedin?: string;
-  };
 }
 
 export interface FooterLinkGroup {

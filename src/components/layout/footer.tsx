@@ -1,48 +1,23 @@
 import Link from "next/link";
-import { Github, Twitter, Linkedin } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import { SITE_CONFIG, FOOTER_LINKS, SOCIAL_LINKS } from "@/lib/constants";
+import { SITE_CONFIG, FOOTER_LINKS } from "@/lib/constants";
 
 /**
  * 사이트 푸터
- * 3-column 그리드, SNS 링크, 저작권
+ * 간결한 레이아웃, 저작권
  */
 export function Footer() {
-  const iconMap = {
-    Github,
-    Twitter,
-    Linkedin,
-  };
-
   return (
     <footer className="border-t bg-background">
       <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Brand Column */}
           <div className="space-y-4">
             <h3 className="text-lg font-bold">{SITE_CONFIG.name}</h3>
             <p className="text-sm text-muted-foreground">
               {SITE_CONFIG.description}
             </p>
-            {/* Social Links */}
-            <div className="flex items-center gap-4">
-              {SOCIAL_LINKS.map((social) => {
-                const Icon = iconMap[social.icon];
-                return (
-                  <Link
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.name}
-                    className="text-muted-foreground transition-colors hover:text-foreground"
-                  >
-                    <Icon className="h-5 w-5" />
-                  </Link>
-                );
-              })}
-            </div>
           </div>
 
           {/* Link Columns */}

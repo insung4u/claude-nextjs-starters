@@ -1,6 +1,6 @@
 import { HeroSection } from "@/features/landing/components/hero-section";
 import { FeaturesSection } from "@/features/landing/components/features-section";
-import { CTASection } from "@/features/landing/components/cta-section";
+import { ExamplesSection } from "@/features/landing/components/examples-section";
 
 /**
  * 홈 페이지
@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <HeroSection />
       <FeaturesSection />
-      <CTASection />
+      <ExamplesSection />
     </>
   );
 }
