@@ -16,6 +16,7 @@ A modern, production-ready landing page starter kit built with Next.js 16, TypeS
 - 📦 **Feature-based** folder structure for scalability
 - 🔤 **TypeScript** strict mode enabled
 - 🎯 **Zero configuration** - ready to use out of the box
+- 🤖 **Claude Git Commands** - AI-powered Git workflow automation with 9 slash commands
 
 ## 🛠️ Tech Stack | 기술 스택
 
@@ -30,6 +31,18 @@ A modern, production-ready landing page starter kit built with Next.js 16, TypeS
 ## 📁 Project Structure | 프로젝트 구조
 
 ```
+.claude/
+└── commands/
+    └── git/                # Claude Git Commands
+        ├── branch.md       # 브랜치 생성, 전환, 관리
+        ├── commit.md       # 이모지 컨벤셔널 커밋 생성
+        ├── log.md          # 커밋 히스토리 조회 및 분석
+        ├── pr.md           # Pull Request 생성 및 관리
+        ├── push.md         # 원격 저장소 푸시
+        ├── review.md       # 코드 리뷰 수행
+        ├── stash.md        # 변경사항 임시 저장/복원
+        ├── sync.md         # 베이스 브랜치와 동기화
+        └── undo.md         # Git 작업 취소/되돌리기
 src/
 ├── app/
 │   ├── layout.tsx          # Root layout with ThemeProvider
@@ -216,6 +229,98 @@ touch src/app/about/page.tsx
 mkdir -p src/features/about
 ```
 
+## 🤖 Claude Git Commands | Claude Git 명령어
+
+This starter kit includes comprehensive Claude AI-powered Git commands to streamline your workflow.
+
+### Available Commands | 사용 가능한 명령어
+
+#### Basic Operations | 기본 작업
+
+- **`/branch`** - 브랜치 생성, 전환, 관리
+  - Create, switch, and manage branches
+  - Usage: `/branch [브랜치명]` or `/branch -l` (list) or `/branch -d [브랜치명]` (delete)
+
+- **`/commit`** - 이모지 컨벤셔널 커밋 생성
+  - Create well-formatted commits with emojis and conventional commit messages
+  - Automatically analyzes staged changes and suggests appropriate commit messages
+  - No Claude signature added to commits
+
+- **`/log`** - 커밋 히스토리 조회 및 분석
+  - View and analyze commit history
+  - Usage: `/log` or `/log 10` or `/log main..feature`
+
+- **`/push`** - 원격 저장소 푸시
+  - Push current branch to remote repository
+  - Usage: `/push` or `/push -f` (force push with warning)
+
+- **`/stash`** - 변경사항 임시 저장/복원
+  - Temporarily save and restore changes
+  - Usage: `/stash` or `/stash save "작업 설명"` or `/stash pop`
+
+- **`/undo`** - Git 작업 취소/되돌리기
+  - Safely undo or revert Git operations
+  - Usage: `/undo` or `/undo commit` or `/undo add`
+
+#### Collaboration | 협업
+
+- **`/pr`** - Pull Request 생성 및 관리
+  - Create and manage Pull Requests via GitHub CLI
+  - Automatically generates PR summary and test plan
+
+- **`/review`** - 코드 리뷰 수행
+  - Perform automated code review
+  - Checks code quality, security, performance, and best practices
+  - Usage: `/review` or `/review staged` or `/review commit` or `/review branch`
+
+- **`/sync`** - 베이스 브랜치와 동기화
+  - Synchronize with base branch (main/master)
+  - Usage: `/sync` or `/sync rebase` or `/sync merge`
+
+### Commit Format | 커밋 포맷
+
+All commits follow the emoji conventional commit format:
+
+```
+<이모지> <타입>: <설명>
+```
+
+**Types:**
+- `feat`: ✨ New feature
+- `fix`: 🐛 Bug fix
+- `docs`: 📝 Documentation
+- `style`: 💄 Formatting
+- `refactor`: ♻️ Code refactoring
+- `perf`: ⚡ Performance improvement
+- `test`: ✅ Testing
+- `chore`: 🔧 Build/tools
+- `ci`: 🚀 CI/CD
+
+### Usage Examples | 사용 예시
+
+```bash
+# Create a new feature branch
+/branch feature/new-feature
+
+# Make changes and commit
+/commit
+
+# Push to remote
+/push
+
+# Create a pull request
+/pr
+
+# Review changes before committing
+/review staged
+
+# Sync with main branch
+/sync
+
+# View commit history
+/log 20
+```
+
 ## 🎯 Best Practices | 권장사항
 
 - **Components**: Keep components small and focused
@@ -223,6 +328,7 @@ mkdir -p src/features/about
 - **Constants**: Store configuration in `src/lib/constants.ts`
 - **Features**: Group related components in `src/features/`
 - **Server Components**: Use Server Components by default, add `"use client"` only when needed
+- **Git Workflow**: Use Claude Git commands for consistent commit messages and efficient collaboration
 
 ## 🔧 Built-in Features | 내장 기능
 
