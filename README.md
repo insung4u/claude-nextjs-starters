@@ -1,22 +1,22 @@
-# Next.js Landing Page Starter Kit
+# Next.js Starter Kit with Claude AI
 
-A modern, production-ready landing page starter kit built with Next.js 16, TypeScript, Tailwind CSS v4, and shadcn/ui.
+A modern, production-ready starter kit built with Next.js 16, TypeScript, Tailwind CSS v4, shadcn/ui, and powered by Claude AI Git Commands.
 
-**현대적이고 프로덕션 준비가 완료된 Next.js 16 기반 랜딩 페이지 스타터 킷입니다.**
+**Claude AI Git Commands로 강화된 현대적이고 프로덕션 준비가 완료된 Next.js 16 스타터 킷입니다.**
 
 ## ✨ Features | 주요 기능
 
-- ⚡ **Next.js 16** with App Router and React 19
-- 🎨 **Tailwind CSS v4** with OKLCH color system
-- 🧩 **shadcn/ui** components (New York style)
-- 🌙 **Dark Mode** support with next-themes
-- 📱 **Fully Responsive** mobile-first design
-- ♿ **Accessible** with semantic HTML and ARIA attributes
-- 🚀 **SEO Optimized** with OpenGraph and Twitter Card meta tags
-- 📦 **Feature-based** folder structure for scalability
-- 🔤 **TypeScript** strict mode enabled
-- 🎯 **Zero configuration** - ready to use out of the box
-- 🤖 **Claude Git Commands** - AI-powered Git workflow automation with 9 slash commands
+- ⚡ **Next.js 16** - App Router 및 React 19 기반 / with App Router and React 19
+- 🎨 **Tailwind CSS v4** - OKLCH 컬러 시스템 적용 / with OKLCH color system
+- 🧩 **shadcn/ui** - New York 스타일 컴포넌트 / components (New York style)
+- 🌙 **Dark Mode** - next-themes 기반 다크모드 지원 / support with next-themes
+- 📱 **Fully Responsive** - 모바일 우선 반응형 디자인 / mobile-first design
+- ♿ **Accessible** - 시맨틱 HTML 및 ARIA 속성 / with semantic HTML and ARIA attributes
+- 🚀 **SEO Optimized** - OpenGraph 및 Twitter Card 메타태그 / with meta tags
+- 📦 **Feature-based** - 확장 가능한 기능 기반 폴더 구조 / folder structure for scalability
+- 🔤 **TypeScript** - strict 모드 활성화 / strict mode enabled
+- 🎯 **Zero configuration** - 별도 설정 없이 바로 사용 가능 / ready to use out of the box
+- 🤖 **Claude Git Commands** - 9개의 AI 기반 Git 워크플로우 자동화 슬래시 명령어 / AI-powered automation with 9 slash commands
 
 ## 🛠️ Tech Stack | 기술 스택
 
@@ -83,19 +83,19 @@ src/
 
 ### Prerequisites | 사전 요구사항
 
-- Node.js 18.x or later
-- npm, yarn, pnpm, or bun
+- Node.js 18.x 이상 / Node.js 18.x or later
+- npm, yarn, pnpm 또는 bun / npm, yarn, pnpm, or bun
 
 ### Installation | 설치
 
 ```bash
-# Clone the repository
+# 저장소 클론 / Clone the repository
 git clone https://github.com/insung4u/claude-nextjs-starters.git
 
-# Navigate to project directory
+# 프로젝트 디렉토리로 이동 / Navigate to project directory
 cd claude-nextjs-starters
 
-# Install dependencies
+# 의존성 설치 / Install dependencies
 npm install
 # or
 yarn install
@@ -109,6 +109,8 @@ pnpm install
 npm run dev
 ```
 
+브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 랜딩 페이지를 확인하세요.
+
 Open [http://localhost:3000](http://localhost:3000) to see your landing page.
 
 ### Build | 빌드
@@ -121,6 +123,8 @@ npm start
 ## 🎨 Customization | 커스터마이징
 
 ### Site Configuration | 사이트 설정
+
+`src/lib/constants.ts` 파일을 편집하여 사이트를 커스터마이징하세요.
 
 Edit `src/lib/constants.ts` to customize your site:
 
@@ -139,6 +143,8 @@ export const SITE_CONFIG: SiteConfig = {
 
 ### Navigation Menu | 네비게이션 메뉴
 
+`src/lib/constants.ts`에서 `NAVIGATION_ITEMS`를 수정하세요.
+
 Modify `NAVIGATION_ITEMS` in `src/lib/constants.ts`:
 
 ```typescript
@@ -150,6 +156,8 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 ```
 
 ### Features Content | Features 컨텐츠
+
+`src/features/landing/config/landing-config.ts`를 업데이트하세요.
 
 Update `src/features/landing/config/landing-config.ts`:
 
@@ -165,6 +173,8 @@ export const FEATURES: Feature[] = [
 ```
 
 ### Theme Colors | 테마 색상
+
+`src/app/globals.css`에서 CSS 변수를 수정하여 색상을 커스터마이징하세요.
 
 Customize colors in `src/app/globals.css` by modifying CSS variables:
 
@@ -191,15 +201,19 @@ npm start
 npm run lint
 ```
 
-## 🧩 Adding More shadcn/ui Components
+## 🧩 Adding More shadcn/ui Components | shadcn/ui 컴포넌트 추가
 
 ```bash
 npx shadcn@latest add [component-name]
 ```
 
+사용 가능한 컴포넌트: https://ui.shadcn.com/docs/components
+
 Available components: https://ui.shadcn.com/docs/components
 
 ## 🌐 Environment Variables | 환경 변수
+
+`.env.example`을 `.env.local`로 복사하여 커스터마이징하세요.
 
 Copy `.env.example` to `.env.local` and customize:
 
@@ -212,11 +226,11 @@ NEXT_PUBLIC_SITE_NAME="Your Site Name"
 
 ### Landing Page Sections | 랜딩 페이지 섹션
 
-The landing page (`src/app/page.tsx`) includes:
+랜딩 페이지(`src/app/page.tsx`)는 다음 섹션을 포함합니다:
 
-1. **Hero Section** - Main headline, description, and CTA buttons
-2. **Features Section** - Product/service features in a grid layout
-3. **CTA Section** - Newsletter subscription or final call-to-action
+1. **Hero Section** - 메인 헤드라인, 설명, CTA 버튼 / Main headline, description, and CTA buttons
+2. **Features Section** - 그리드 레이아웃의 제품/서비스 기능 / Product/service features in a grid layout
+3. **CTA Section** - 뉴스레터 구독 또는 최종 CTA / Newsletter subscription or final call-to-action
 
 ### Adding New Pages | 새 페이지 추가
 
@@ -230,6 +244,8 @@ mkdir -p src/features/about
 ```
 
 ## 🤖 Claude Git Commands | Claude Git 명령어
+
+이 스타터 킷은 워크플로우를 간소화하는 포괄적인 Claude AI 기반 Git 명령어를 포함합니다.
 
 This starter kit includes comprehensive Claude AI-powered Git commands to streamline your workflow.
 
@@ -279,21 +295,23 @@ This starter kit includes comprehensive Claude AI-powered Git commands to stream
 
 ### Commit Format | 커밋 포맷
 
+모든 커밋은 이모지 컨벤셔널 커밋 포맷을 따릅니다.
+
 All commits follow the emoji conventional commit format:
 
 ```
 <이모지> <타입>: <설명>
 ```
 
-**Types:**
-- `feat`: ✨ New feature
-- `fix`: 🐛 Bug fix
-- `docs`: 📝 Documentation
-- `style`: 💄 Formatting
-- `refactor`: ♻️ Code refactoring
-- `perf`: ⚡ Performance improvement
-- `test`: ✅ Testing
-- `chore`: 🔧 Build/tools
+**Types / 타입:**
+- `feat`: ✨ 새로운 기능 / New feature
+- `fix`: 🐛 버그 수정 / Bug fix
+- `docs`: 📝 문서화 / Documentation
+- `style`: 💄 포맷팅 / Formatting
+- `refactor`: ♻️ 코드 리팩토링 / Code refactoring
+- `perf`: ⚡ 성능 개선 / Performance improvement
+- `test`: ✅ 테스트 / Testing
+- `chore`: 🔧 빌드/도구 / Build/tools
 - `ci`: 🚀 CI/CD
 
 ### Usage Examples | 사용 예시
@@ -323,30 +341,32 @@ All commits follow the emoji conventional commit format:
 
 ## 🎯 Best Practices | 권장사항
 
-- **Components**: Keep components small and focused
-- **Types**: Define TypeScript types in `src/types/`
-- **Constants**: Store configuration in `src/lib/constants.ts`
-- **Features**: Group related components in `src/features/`
-- **Server Components**: Use Server Components by default, add `"use client"` only when needed
-- **Git Workflow**: Use Claude Git commands for consistent commit messages and efficient collaboration
+- **Components / 컴포넌트**: 작고 집중된 컴포넌트 유지 / Keep components small and focused
+- **Types / 타입**: `src/types/`에 TypeScript 타입 정의 / Define TypeScript types in `src/types/`
+- **Constants / 상수**: `src/lib/constants.ts`에 설정 저장 / Store configuration in `src/lib/constants.ts`
+- **Features / 기능**: `src/features/`에 관련 컴포넌트 그룹화 / Group related components in `src/features/`
+- **Server Components / 서버 컴포넌트**: 기본적으로 서버 컴포넌트 사용, 필요시에만 `"use client"` 추가 / Use Server Components by default
+- **Git Workflow / Git 워크플로우**: 일관된 커밋 메시지와 효율적인 협업을 위해 Claude Git 명령어 사용 / Use Claude Git commands
 
 ## 🔧 Built-in Features | 내장 기능
 
 ### Dark Mode | 다크 모드
 
+시스템 테마를 자동으로 감지하고 수동 전환을 허용합니다. `src/app/layout.tsx`에서 설정됩니다.
+
 Automatically detects system theme and allows manual toggle. Configured in `src/app/layout.tsx`.
 
 ### Responsive Navigation | 반응형 네비게이션
 
-- **Desktop**: Horizontal navigation menu
-- **Mobile**: Hamburger menu with dropdown
+- **Desktop / 데스크톱**: 가로 네비게이션 메뉴 / Horizontal navigation menu
+- **Mobile / 모바일**: 드롭다운 햄버거 메뉴 / Hamburger menu with dropdown
 
 ### SEO Optimization | SEO 최적화
 
-- OpenGraph meta tags
-- Twitter Card support
-- Semantic HTML structure
-- Proper heading hierarchy
+- OpenGraph 메타 태그 / OpenGraph meta tags
+- Twitter Card 지원 / Twitter Card support
+- 시맨틱 HTML 구조 / Semantic HTML structure
+- 적절한 헤딩 계층 구조 / Proper heading hierarchy
 
 ## 📱 Responsive Breakpoints | 반응형 브레이크포인트
 
@@ -357,11 +377,13 @@ Automatically detects system theme and allows manual toggle. Configured in `src/
 
 ## 🚢 Deployment | 배포
 
-### Vercel (Recommended)
+### Vercel (권장 / Recommended)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/insung4u/claude-nextjs-starters)
 
-### Other Platforms
+### Other Platforms / 다른 플랫폼
+
+표준 Next.js 앱으로 다음 플랫폼에 배포할 수 있습니다:
 
 This is a standard Next.js app and can be deployed to:
 - Netlify
@@ -370,13 +392,19 @@ This is a standard Next.js app and can be deployed to:
 - Render
 - Docker
 
+자세한 내용은 [Next.js 배포 문서](https://nextjs.org/docs/app/building-your-application/deploying)를 참조하세요.
+
 See [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
 ## 🤝 Contributing | 기여하기
 
+기여를 환영합니다! Pull Request를 자유롭게 제출해 주세요.
+
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📝 License
+## 📝 License | 라이선스
+
+이 프로젝트는 오픈 소스이며 [MIT License](LICENSE) 하에 제공됩니다.
 
 This project is open source and available under the [MIT License](LICENSE).
 
@@ -389,8 +417,12 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Support | 지원
 
+질문이 있거나 도움이 필요하시면 GitHub에서 이슈를 열어주세요.
+
 If you have any questions or need help, please open an issue on GitHub.
 
 ---
+
+**Next.js와 shadcn/ui로 ❤️ 를 담아 제작했습니다**
 
 **Built with ❤️ using Next.js and shadcn/ui**
