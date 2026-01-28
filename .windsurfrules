@@ -1,0 +1,85 @@
+# Windsurf AI Rules
+
+## Project: Claude NextJS Starters
+
+A production-ready Next.js 16 starter kit with TypeScript, Tailwind CSS v4, and shadcn/ui.
+
+## Tech Stack
+
+| Category | Technology |
+|----------|------------|
+| Framework | Next.js 16.1.1 (App Router), React 19 |
+| Language | TypeScript 5 (strict mode) |
+| Styling | Tailwind CSS v4 (OKLCH color system) |
+| UI | shadcn/ui (New York style), Radix UI |
+| Icons | lucide-react |
+| Theme | next-themes (dark/light mode) |
+
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router
+├── components/
+│   ├── ui/                # shadcn/ui components
+│   └── layout/            # Header, Footer, Navigation
+├── features/              # Feature-based modules
+├── lib/                   # Utilities (cn, constants)
+├── types/                 # TypeScript interfaces
+└── hooks/                 # Custom hooks
+```
+
+## Code Patterns
+
+### Component Pattern (CVA)
+```tsx
+import { cva } from "class-variance-authority"
+import { cn } from "@/lib/utils"
+
+const variants = cva("base-styles", {
+  variants: { variant: {...}, size: {...} },
+  defaultVariants: { variant: "default" }
+})
+
+const Component = React.forwardRef<HTMLElement, Props>(
+  ({ className, variant, ...props }, ref) => (
+    <div ref={ref} className={cn(variants({ variant, className }))} {...props} />
+  )
+)
+```
+
+### Path Aliases
+```tsx
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import type { Feature } from "@/types"
+```
+
+### Server vs Client Components
+- Default: Server Component (no directive)
+- Client: Add `"use client"` for useState, useEffect, event handlers
+
+## Naming Conventions
+
+| Type | Convention | Example |
+|------|------------|---------|
+| Files | kebab-case | `my-component.tsx` |
+| Components | PascalCase | `MyComponent` |
+| Hooks | camelCase | `useMobile` |
+| Types | PascalCase | `NavigationItem` |
+| Constants | SCREAMING_SNAKE | `SITE_CONFIG` |
+
+## Key Files
+
+- `src/lib/constants.ts` - Site configuration
+- `src/app/globals.css` - CSS variables, theme
+- `components.json` - shadcn/ui config
+- `CLAUDE.md` - Full project documentation
+
+## Best Practices
+
+1. Use Server Components by default
+2. Keep components small and focused
+3. Use cn() for all className merging
+4. Define types for all props
+5. Follow emoji conventional commits

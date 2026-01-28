@@ -17,6 +17,7 @@ A modern, production-ready starter kit built with Next.js 16, TypeScript, Tailwi
 - 🔤 **TypeScript** - strict 모드 활성화 / strict mode enabled
 - 🎯 **Zero configuration** - 별도 설정 없이 바로 사용 가능 / ready to use out of the box
 - 🤖 **Claude Git Commands** - 9개의 AI 기반 Git 워크플로우 자동화 슬래시 명령어 / AI-powered automation with 9 slash commands
+- 🧠 **AI IDE Ready** - Claude Code, Cursor, Copilot, Windsurf, Cline, Aider 지원 / supports multiple AI coding assistants
 
 ## 🛠️ Tech Stack | 기술 스택
 
@@ -32,8 +33,18 @@ A modern, production-ready starter kit built with Next.js 16, TypeScript, Tailwi
 
 ```
 .claude/
+├── settings.json           # Claude Code 권한 설정
 └── commands/
-    └── git/                # Claude Git Commands
+    ├── dev/                # 개발 명령어
+    │   ├── start.md        # 개발 서버 시작
+    │   ├── build.md        # 프로덕션 빌드
+    │   ├── lint.md         # 린트 검사
+    │   └── check.md        # 전체 코드 검증
+    ├── create/             # 생성 명령어
+    │   ├── component.md    # 새 컴포넌트 생성
+    │   ├── feature.md      # 새 기능 모듈 생성
+    │   └── page.md         # 새 페이지 생성
+    └── git/                # Git 명령어
         ├── branch.md       # 브랜치 생성, 전환, 관리
         ├── commit.md       # 이모지 컨벤셔널 커밋 생성
         ├── log.md          # 커밋 히스토리 조회 및 분석
@@ -43,6 +54,17 @@ A modern, production-ready starter kit built with Next.js 16, TypeScript, Tailwi
         ├── stash.md        # 변경사항 임시 저장/복원
         ├── sync.md         # 베이스 브랜치와 동기화
         └── undo.md         # Git 작업 취소/되돌리기
+CLAUDE.md                   # Claude Code 프로젝트 가이드
+.cursorrules                # Cursor AI 규칙
+.cursorignore               # Cursor 무시 파일
+.windsurfrules              # Windsurf AI 규칙
+.clinerules                 # Cline AI 규칙
+.aider.conf.yml             # Aider 설정
+.github/
+└── copilot-instructions.md # GitHub Copilot 지침
+.vscode/
+├── settings.json           # VS Code/Cursor 설정
+└── extensions.json         # 권장 확장 프로그램
 src/
 ├── app/
 │   ├── layout.tsx          # Root layout with ThemeProvider
@@ -243,11 +265,40 @@ touch src/app/about/page.tsx
 mkdir -p src/features/about
 ```
 
-## 🤖 Claude Git Commands | Claude Git 명령어
+## 🤖 Claude Code Integration | Claude Code 통합
 
-이 스타터 킷은 워크플로우를 간소화하는 포괄적인 Claude AI 기반 Git 명령어를 포함합니다.
+이 스타터 킷은 Claude Code와 완벽하게 통합되어 AI 토큰을 절약하면서 효율적인 개발이 가능합니다.
 
-This starter kit includes comprehensive Claude AI-powered Git commands to streamline your workflow.
+This starter kit is fully integrated with Claude Code for efficient development while saving AI tokens.
+
+### 📋 CLAUDE.md
+
+프로젝트 루트의 `CLAUDE.md` 파일에 프로젝트 구조, 기술 스택, 코드 컨벤션이 정리되어 있어 Claude가 프로젝트를 빠르게 이해할 수 있습니다.
+
+The `CLAUDE.md` file at the project root contains project structure, tech stack, and code conventions for Claude to quickly understand the project.
+
+### 🛠️ Claude Dev Commands | 개발 명령어
+
+| Command | Description (EN) | 설명 (KR) |
+|---------|------------------|-----------|
+| `/dev:start` | Start development server | 개발 서버 시작 |
+| `/dev:build` | Production build | 프로덕션 빌드 |
+| `/dev:lint` | Run ESLint | 코드 린트 검사 |
+| `/dev:check` | Full code validation | 전체 코드 검증 (lint + build) |
+
+### 🏗️ Claude Create Commands | 생성 명령어
+
+| Command | Description (EN) | 설명 (KR) |
+|---------|------------------|-----------|
+| `/create:component` | Create new component | 새 컴포넌트 생성 |
+| `/create:feature` | Create feature module | 새 기능 모듈 생성 |
+| `/create:page` | Create new page | 새 페이지 생성 |
+
+### 🔀 Claude Git Commands | Git 명령어
+
+워크플로우를 간소화하는 포괄적인 Claude AI 기반 Git 명령어를 포함합니다.
+
+Comprehensive Claude AI-powered Git commands to streamline your workflow.
 
 ### Available Commands | 사용 가능한 명령어
 
@@ -292,6 +343,28 @@ This starter kit includes comprehensive Claude AI-powered Git commands to stream
 - **`/sync`** - 베이스 브랜치와 동기화
   - Synchronize with base branch (main/master)
   - Usage: `/sync` or `/sync rebase` or `/sync merge`
+
+## 🧠 AI IDE Support | AI IDE 지원
+
+이 프로젝트는 다양한 AI 코딩 어시스턴트를 지원합니다.
+
+This project supports multiple AI coding assistants out of the box.
+
+| IDE / Tool | Config File | Description |
+|------------|-------------|-------------|
+| **Claude Code** | `CLAUDE.md`, `.claude/` | 프로젝트 가이드 및 슬래시 명령어 |
+| **Cursor** | `.cursorrules`, `.cursorignore` | AI 규칙 및 무시 패턴 |
+| **GitHub Copilot** | `.github/copilot-instructions.md` | 프로젝트 컨텍스트 지침 |
+| **Windsurf** | `.windsurfrules` | Codeium AI 규칙 |
+| **Cline** | `.clinerules` | VS Code Cline 확장 규칙 |
+| **Aider** | `.aider.conf.yml` | Aider CLI 설정 |
+| **VS Code** | `.vscode/settings.json` | 에디터 설정 및 Tailwind 지원 |
+
+### AI 토큰 절약 팁 | Token Saving Tips
+
+1. AI가 프로젝트 구조를 파악하는 데 필요한 정보가 설정 파일에 미리 정의되어 있습니다
+2. 각 IDE별 규칙 파일을 통해 코드 스타일과 패턴을 일관되게 유지합니다
+3. `.cursorignore` 등을 통해 불필요한 파일 분석을 방지합니다
 
 ### Commit Format | 커밋 포맷
 

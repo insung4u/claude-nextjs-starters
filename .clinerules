@@ -1,0 +1,52 @@
+# Cline AI Rules
+
+## Project Overview
+
+**Claude NextJS Starters** - A production-ready Next.js 16 starter kit.
+
+## Tech Stack
+
+- Next.js 16.1.1 (App Router) + React 19
+- TypeScript 5 (strict mode)
+- Tailwind CSS v4 (OKLCH color system)
+- shadcn/ui (New York style) + Radix UI
+- lucide-react icons
+- next-themes (dark/light mode)
+
+## Directory Structure
+
+```
+src/
+├── app/                    # Pages and layouts (App Router)
+├── components/ui/          # shadcn/ui components (CVA pattern)
+├── components/layout/      # Header, Footer, Navigation, ThemeToggle
+├── features/[name]/        # Feature modules (components/, config/)
+├── lib/utils.ts           # cn() utility
+├── lib/constants.ts       # Site config, navigation
+├── types/index.ts         # Shared TypeScript types
+└── hooks/                 # Custom hooks (useMobile)
+```
+
+## Code Conventions
+
+1. **Path Aliases**: Use `@/` for src/ imports
+2. **Styling**: Use `cn()` from `@/lib/utils` for className merging
+3. **Components**: CVA pattern for variants, forwardRef for DOM access
+4. **Server Components**: Default, add `"use client"` only when needed
+
+## Adding Components
+
+```bash
+# shadcn/ui component
+npx shadcn@latest add [component-name]
+
+# Custom locations
+# UI: src/components/ui/
+# Feature: src/features/[feature]/components/
+# Layout: src/components/layout/
+```
+
+## Commit Format
+
+Emoji conventional commits:
+- ✨ feat | 🐛 fix | 📝 docs | ♻️ refactor | ⚡ perf | ✅ test | 🔧 chore

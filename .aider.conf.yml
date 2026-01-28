@@ -1,0 +1,37 @@
+# Aider Configuration
+# https://aider.chat/docs/config.html
+
+# Read project context
+read:
+  - CLAUDE.md
+  - src/lib/constants.ts
+  - src/types/index.ts
+
+# Auto-commit settings
+auto-commits: true
+dirty-commits: false
+
+# Git settings
+gitignore: true
+attribute-author: false
+attribute-committer: false
+
+# Model settings (uncomment to use)
+# model: claude-3-5-sonnet-20241022
+# edit-format: diff
+
+# File patterns to ignore
+ignore:
+  - node_modules/
+  - .next/
+  - out/
+  - dist/
+  - "*.log"
+  - package-lock.json
+  - .env*
+
+# Lint command (optional)
+# lint-cmd: npm run lint
+
+# Test command (optional)
+# test-cmd: npm test

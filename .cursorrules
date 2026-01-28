@@ -1,0 +1,144 @@
+# Cursor AI Rules for Claude NextJS Starters
+
+You are an expert Next.js 16 developer working on a production-ready starter kit.
+
+## Project Overview
+
+This is a Next.js 16 starter kit with:
+- **Framework**: Next.js 16.1.1 (App Router), React 19
+- **Language**: TypeScript 5 (strict mode)
+- **Styling**: Tailwind CSS v4 (OKLCH color system), CSS Variables
+- **UI**: shadcn/ui (New York style), Radix UI primitives
+- **Icons**: lucide-react
+- **Theme**: next-themes (dark/light mode)
+
+## Directory Structure
+
+```
+src/
+├── app/                    # Next.js App Router (pages, layouts)
+├── components/
+│   ├── ui/                # shadcn/ui components (reusable primitives)
+│   └── layout/            # Layout components (header, footer, navigation)
+├── features/              # Feature-based modules
+│   └── [feature]/
+│       ├── components/    # Feature-specific components
+│       └── config/        # Feature configuration
+├── lib/
+│   ├── utils.ts          # cn() utility (clsx + tailwind-merge)
+│   └── constants.ts      # Site config, navigation items
+├── types/                 # Shared TypeScript interfaces
+└── hooks/                 # Custom React hooks
+```
+
+## Code Conventions
+
+### Component Patterns
+
+1. **UI Components** (`src/components/ui/`):
+   - Use CVA (class-variance-authority) for variants
+   - Use forwardRef for DOM element access
+   - Export both component and variants
+
+```tsx
+import { cva, type VariantProps } from "class-variance-authority"
+import { cn } from "@/lib/utils"
+
+const componentVariants = cva("base-styles", {
+  variants: { variant: {...}, size: {...} },
+  defaultVariants: { variant: "default", size: "default" }
+})
+
+const Component = React.forwardRef<HTMLDivElement, ComponentProps>(
+  ({ className, variant, size, ...props }, ref) => (
+    <div ref={ref} className={cn(componentVariants({ variant, size, className }))} {...props} />
+  )
+)
+Component.displayName = "Component"
+```
+
+2. **Feature Components** (`src/features/[feature]/components/`):
+   - Domain-specific components
+   - Can use UI components as building blocks
+
+3. **Layout Components** (`src/components/layout/`):
+   - Header, Footer, Navigation, ThemeToggle
+
+### Styling
+
+- Always use `cn()` from `@/lib/utils` for className merging
+- Use Tailwind CSS classes
+- CSS variables are defined in `src/app/globals.css` (OKLCH color system)
+- Responsive breakpoint: 768px (use `useMobile()` hook)
+
+### Path Aliases
+
+```tsx
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { useMobile } from "@/hooks/use-mobile"
+import type { Feature } from "@/types"
+```
+
+### TypeScript
+
+- Shared types in `src/types/index.ts`
+- Component props defined in component files
+- Use `interface` for object shapes, `type` for unions/intersections
+
+### Server vs Client Components
+
+- Default is Server Component (no directive needed)
+- Add `"use client"` only when using:
+  - useState, useEffect, useContext
+  - Event handlers (onClick, onChange)
+  - Browser APIs (window, document)
+  - Custom hooks with state
+
+## Adding Components
+
+### shadcn/ui Component
+```bash
+npx shadcn@latest add [component-name]
+```
+
+### Custom Component
+- UI component: `src/components/ui/[name].tsx`
+- Feature component: `src/features/[feature]/components/[name].tsx`
+- Layout component: `src/components/layout/[name].tsx`
+
+## Naming Conventions
+
+- **Files**: kebab-case (`my-component.tsx`)
+- **Components**: PascalCase (`MyComponent`)
+- **Hooks**: camelCase with `use` prefix (`useMobile`)
+- **Types/Interfaces**: PascalCase (`NavigationItem`)
+- **Constants**: SCREAMING_SNAKE_CASE (`SITE_CONFIG`)
+
+## Git Commit Format
+
+Use emoji conventional commits:
+- ✨ `feat`: New feature
+- 🐛 `fix`: Bug fix
+- 📝 `docs`: Documentation
+- 💄 `style`: Formatting
+- ♻️ `refactor`: Code refactoring
+- ⚡ `perf`: Performance
+- ✅ `test`: Testing
+- 🔧 `chore`: Build/tools
+
+## Important Files
+
+- `src/lib/constants.ts` - Site config, navigation, footer links
+- `src/app/globals.css` - CSS variables, theme colors
+- `components.json` - shadcn/ui CLI configuration
+- `tsconfig.json` - TypeScript config with path aliases
+
+## Best Practices
+
+1. Keep components small and focused
+2. Use Server Components by default
+3. Colocate related code in feature folders
+4. Extract reusable logic to hooks
+5. Define types for all props and data structures
+6. Use semantic HTML and proper ARIA attributes
